@@ -42,7 +42,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="text-lg text-gray-600 mb-6"
               >
-                Crafting intelligent solutions with NLP, PyTorch, and spaCy, while building elegant digital experiences.
+                Crafting intelligent solutions with NLP, while building elegant digital experiences.
               </motion.p>
             </div>
             <motion.div
