@@ -33,8 +33,8 @@ export default function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
               >
-                Building Digital <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">Experiences</span>
+                Computational Linguist & <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">Aspiring Full-stack Developer</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="text-lg text-gray-600 mb-6"
               >
-                Full-stack developer crafting elegant solutions to complex problems
+                Crafting intelligent solutions with NLP, PyTorch, and spaCy, while building elegant digital experiences.
               </motion.p>
             </div>
             <motion.div
