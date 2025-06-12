@@ -1,0 +1,139 @@
+{
+  "hash": "4611fdec",
+  "configHash": "4b31b250",
+  "lockfileHash": "016c8517",
+  "browserHash": "3ceecdc1",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6ee55b10",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "6731234a",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "8a2a9d62",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../node_modules/react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "abe9010b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8c5cca32",
+      "needsInterop": true
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "244044c9",
+      "needsInterop": false
+    },
+    "react-intersection-observer": {
+      "src": "../../node_modules/react-intersection-observer/dist/index.mjs",
+      "file": "react-intersection-observer.js",
+      "fileHash": "7af5dbde",
+      "needsInterop": false
+    },
+    "prismjs": {
+      "src": "../../node_modules/prismjs/prism.js",
+      "file": "prismjs.js",
+      "fileHash": "965ff7d0",
+      "needsInterop": true
+    },
+    "prismjs/prism": {
+      "src": "../../node_modules/prismjs/prism.js",
+      "file": "prismjs_prism.js",
+      "fileHash": "ab739e72",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-clike": {
+      "src": "../../node_modules/prismjs/components/prism-clike.js",
+      "file": "prismjs_components_prism-clike.js",
+      "fileHash": "34ffa467",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-markup-templating": {
+      "src": "../../node_modules/prismjs/components/prism-markup-templating.js",
+      "file": "prismjs_components_prism-markup-templating.js",
+      "fileHash": "9a8969fc",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-java": {
+      "src": "../../node_modules/prismjs/components/prism-java.js",
+      "file": "prismjs_components_prism-java.js",
+      "fileHash": "69828928",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-javascript": {
+      "src": "../../node_modules/prismjs/components/prism-javascript.js",
+      "file": "prismjs_components_prism-javascript.js",
+      "fileHash": "0dd2b13f",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-jsx": {
+      "src": "../../node_modules/prismjs/components/prism-jsx.js",
+      "file": "prismjs_components_prism-jsx.js",
+      "fileHash": "638e17ef",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-typescript": {
+      "src": "../../node_modules/prismjs/components/prism-typescript.js",
+      "file": "prismjs_components_prism-typescript.js",
+      "fileHash": "695fa91b",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-tsx": {
+      "src": "../../node_modules/prismjs/components/prism-tsx.js",
+      "file": "prismjs_components_prism-tsx.js",
+      "fileHash": "3e3094bb",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-php": {
+      "src": "../../node_modules/prismjs/components/prism-php.js",
+      "file": "prismjs_components_prism-php.js",
+      "fileHash": "a059d0c3",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-markup": {
+      "src": "../../node_modules/prismjs/components/prism-markup.js",
+      "file": "prismjs_components_prism-markup.js",
+      "fileHash": "c4830395",
+      "needsInterop": true
+    },
+    "prismjs/components/prism-css": {
+      "src": "../../node_modules/prismjs/components/prism-css.js",
+      "file": "prismjs_components_prism-css.js",
+      "fileHash": "6fd9f64f",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-XHU36PYF": {
+      "file": "chunk-XHU36PYF.js"
+    },
+    "chunk-IHRST5LR": {
+      "file": "chunk-IHRST5LR.js"
+    },
+    "chunk-32E4H3EV": {
+      "file": "chunk-32E4H3EV.js"
+    },
+    "chunk-WA7W63WA": {
+      "file": "chunk-WA7W63WA.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}

@@ -1,4 +1,3 @@
-
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
@@ -7,10 +6,13 @@ import ContactSection from './components/ContactSection'
 import './App.css'
 
 function App() {
+  // Keep the dynamic key to prevent caching issues
+  const forceKey = Date.now().toString();
+
   return (
     <main className="relative">
       <Navbar />
-      <HeroSection />
+      <HeroSection key={forceKey} />
       <AboutSection />
       <SkillsSection />
       <ContactSection />
