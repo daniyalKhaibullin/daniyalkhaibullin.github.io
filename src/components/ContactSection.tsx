@@ -36,7 +36,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-50 rounded-2xl p-8"
+            className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200 shadow-professional"
           >
             <div className="space-y-6">
               <div>
@@ -46,15 +46,30 @@ export default function ContactSection() {
               
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:your.email@example.com" className="text-primary-600 hover:text-primary-700">
-                  dankhaibullin@gmail.com . daniyal.khaibullin@student.uni-tuebingen.de
-                </a>
+                <div className="space-y-2">
+                  <div>
+                    <a 
+                      href="mailto:dankhaibullin@gmail.com" 
+                      className="text-primary-600 hover:text-primary-700 block transition-colors"
+                    >
+                      dankhaibullin@gmail.com
+                    </a>
+                  </div>
+                  <div>
+                    <a 
+                      href="mailto:daniyal.khaibullin@student.uni-tuebingen.de" 
+                      className="text-primary-600 hover:text-primary-700 block transition-colors"
+                    >
+                      daniyal.khaibullin@student.uni-tuebingen.de
+                    </a>
+                  </div>
+                </div>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                <a href="tel:+1234567890" className="text-primary-600 hover:text-primary-700">
-                  +32 613 424 901
+                <a href="tel:+34613424901" className="text-primary-600 hover:text-primary-700">
+                  +34 613 424 901
                 </a>
               </div>
 
@@ -62,7 +77,7 @@ export default function ContactSection() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-primary-600 text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:bg-primary-700 transition-colors"
+                  className="w-full btn-primary text-white px-8 py-3 rounded-lg font-medium"
                 >
                   Send Message
                 </motion.button>

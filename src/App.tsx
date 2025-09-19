@@ -6,13 +6,10 @@ import ContactSection from './components/ContactSection'
 import './App.css'
 
 function App() {
-  // Keep the dynamic key to prevent caching issues
-  const forceKey = Date.now().toString();
-
   return (
     <main className="relative">
       <Navbar />
-      <HeroSection key={forceKey} />
+      <HeroSection />
       <AboutSection />
       <SkillsSection />
       <ContactSection />

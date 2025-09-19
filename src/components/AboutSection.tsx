@@ -29,15 +29,15 @@ export default function AboutSection() {
             className="prose lg:prose-lg"
           >
             <p className="text-gray-600 leading-relaxed">
-      I am an upcoming and dedicated NLP programmer specializing in computational linguistics. My academic journey, particularly DSA III, Statistical NLP, and Data Science for Linguists courses, have all equipped me with robust skills in data processing and corpus analysis in linguistics. This foundation allows me to develop and learn about building sophisticated language models and analytical tools that bridge the gap between linguistics and technology.
+      I am an upcoming and dedicated programmer specializing in Generative AI and NLP, currently studying at Eberhard Karls Universität Tübingen. I am studying to specialize in NLP as well as generative AI, building a strong foundation in both theoretical linguistics and practical AI applications.
     </p>
     
     <p className="text-gray-600 leading-relaxed mt-4">
-      Beyond my specialization in NLP, I have a passion for full-stack development, enjoying projects built with React and Django as a hobbyist. This blend of linguistic expertise and web development enables me to create comprehensive solutions that are both technically sound and linguistically informed.
+      While I'm still building my professional experience, I'm eager to learn and grow in the industry. I approach every opportunity with enthusiasm and a strong desire to contribute meaningfully to projects while expanding my skills in AI, machine learning, and software development. I also have a passion for frontend and backend development, enjoying working with React, Django, Express, and Node.js.
     </p>
     
     <p className="text-gray-600 leading-relaxed mt-4">
-      When I'm not immersed in coding or data analysis, you can find me exploring the latest technologies, contributing to open-source projects, or mentoring aspiring developers. I thrive on continuous learning and enjoy sharing my knowledge through technical writing and collaborative projects.
+      I'm actively seeking opportunities to apply my academic knowledge in real-world scenarios and am committed to continuous learning. My goal is to catch up with the ever-growing field of tech, especially with generative AI, to be able to theoretically understand it, as well as apply it in the industry, or any other field/market to generate revenue and leverage the power of AI. (To be fair, sometimes I dabble in vibe coding, but I try not to abuse it.)
     </p>
           </motion.div>
           
@@ -47,21 +47,21 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="grid grid-cols-2 gap-6"
           >
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Experience</h3>
-              <p className="text-gray-600">1+ year</p>
+              <p className="text-gray-600 font-medium">Entry Level</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100 hover:shadow-lg transition-all duration-300">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Projects</h3>
-              <p className="text-gray-600">2 completed</p>
+              <p className="text-gray-600 font-medium">3 completed</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Clients</h3>
-              <p className="text-gray-600">2 satisfied</p>
+            <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl border border-purple-100 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Focus</h3>
+              <p className="text-gray-600 font-medium">AI & NLP</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl border border-orange-100 hover:shadow-lg transition-all duration-300">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Learning</h3>
-              <p className="text-gray-600">Always</p>
+              <p className="text-gray-600 font-medium">Always</p>
             </div>
           </motion.div>
         </div>
