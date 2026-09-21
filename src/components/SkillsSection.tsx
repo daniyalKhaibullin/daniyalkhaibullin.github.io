@@ -19,23 +19,98 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Playtomic-to-Xero Financial Pipeline",
+    description: "An automated, serverless Node.js pipeline that extracts padel club transaction data from the Playtomic API and reconciles it into draft sales invoices in Xero. Hosted live on Render with secure token handling via Supabase.",
+    features: [
+      "Automated extraction of club payments paced to Playtomic's API rate limits",
+      "Machine-readable ontology framework (YAML/JSON) for complex financial categorization",
+      "Secure API token handling and authentication stored in a Supabase backend",
+      "Implementation of 300+ automated Jest tests to ensure strict financial data integrity",
+      "Dynamic VAT basis calculations and card fee reconciliation based on service dates"
+    ],
+    technologies: ["Node.js", "Render", "Supabase", "REST APIs", "Jest", "YAML", "Xero API"],
+    contributions: [
+      "Architected the entire serverless infrastructure and deployed on Render",
+      "Engineered the transformation logic mapping Playtomic product types to Xero accounts",
+      "Designed the full test suite ensuring zero-loss financial reconciliation",
+      "Implemented seamless error-handling and audit trail generation for accounting transparency"
+    ],
+    codeSnippet: `// Example representation of pipeline routing logic
+async function processClubMonth(clubId, targetMonth) {
+  try {
+    // 1. Pull club payments straight from Playtomic
+    const rawPayments = await fetchPlaytomicData(clubId, targetMonth, rateLimiter);
+    
+    // 2. Categorize into invoice lines using YAML ontology rules
+    const categorizedLines = await transformPaymentsToInvoice(rawPayments, ontologyRules);
+    
+    // 3. Post the draft invoice into the club's Xero organization
+    const xeroDraft = await postToXero(clubId, categorizedLines);
+    
+    return generateAuditTrail(xeroDraft, "POSTED");
+  } catch (error) {
+    handlePipelineException(error, clubId);
+  }
+}`,
+    images: ["/assets/images/playtomic-2.png", "/assets/images/playtomic-3.png"],
+    websiteUrl: "https://playtomic-xero-pipeline.onrender.com"
+  },
+  {
+    title: "Max Planck Data Management Architecture",
+    description: "A full-stack internal management application developed for the Max Planck Institute's data team. Designed to supersede third-party tools (Asana) to seamlessly assign, label, and route incoming motion-capture data.",
+    features: [
+      "React Vite and TypeScript frontend for rapid, responsive data tagging",
+      "Python FastAPI backend connected to an SQLite database for reliable data querying",
+      "Nginx reverse proxy configuration for secure, optimized web traffic routing",
+      "Containerized deployment to the internal Max Planck cluster using Docker and Portainer",
+      "AI-accelerated development cycle utilizing Claude Code for workflow optimization"
+    ],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "SQLite", "Docker", "Nginx"],
+    contributions: [
+      "Developed the interactive GUI for markerless data capture analysis",
+      "Configured the Nginx server blocks and handled system architecture networking",
+      "Authored docker-compose.yml files and managed container deployment via Portainer",
+      "Integrated SQL databases for robust data tracking across the research team"
+    ],
+    codeSnippet: `# Docker Compose configuration for internal cluster deployment
+version: '3.8'
+services:
+  frontend:
+    build: ./client
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build: ./api
+    environment:
+      - DATABASE_URL=sqlite:///./data/mpi_internal.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - mpi_data:/app/data
+    restart: always
+
+volumes:
+  mpi_data:`,
+  },
+  {
     title: "AI-Powered Language Learning Platform",
-    description: `Intelligent conversational language tutor with real-time streaming, metadata extraction, and adaptive learning algorithms. Built with TypeScript, Express.js, and Supabase for seamless user experience and efficient vocabulary management.`,
+    description: "Intelligent conversational language tutor with real-time streaming, metadata extraction, and adaptive learning algorithms. Built with TypeScript, Express.js, and Supabase for seamless user experience.",
     features: [
       "Real-time streaming responses with ChatGPT-like experience using Server-Sent Events",
       "Intelligent metadata extraction from AI responses for automatic vocabulary management",
       "Contextual conversation state management with adaptive teaching algorithms",
       "Multi-language support with PostgreSQL database optimization",
-      "Automatic word saving with spaced repetition learning system",
       "RESTful API architecture with Express.js and TypeScript"
     ],
-    technologies: ["TypeScript", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Server-Sent Events", "AI/ML"],
+    technologies: ["TypeScript", "Node.js", "Express.js", "PostgreSQL", "Supabase", "AI/ML"],
     contributions: [
-      "Designed and implemented advanced LLM service architecture with contextual response generation",
-      "Built real-time streaming API using Server-Sent Events for seamless user interaction",
-      "Developed intelligent metadata extraction system for automatic vocabulary management",
-      "Created comprehensive PostgreSQL schema for user profiles and conversation management",
-      "Implemented adaptive learning algorithms with spaced repetition functionality"
+      "Designed and implemented advanced LLM service architecture with contextual generation",
+      "Built real-time streaming API using Server-Sent Events",
+      "Developed intelligent metadata extraction system for automatic vocabulary management"
     ],
     codeSnippet: `interface LLMResponse {
   message: string;
@@ -43,119 +118,20 @@ const projects: Project[] = [
     saveWord?: {
       word: string;
       definition: string;
-      partOfSpeech?: string;
-      pronunciation?: string;
-      ipa?: string;
       examples: string[];
     };
-    lessonContext?: string;
-    action?: 'add_word' | 'create_lesson' | 'practice_vocabulary';
+    action?: 'add_word' | 'create_lesson';
   };
 }
 
 export class LLMService {
   private static readonly SYSTEM_PROMPT = \`
-  You are Talki, a friendly language tutor. Your rules:
-  
-  1. Teaching Style:
-  - Use clear, simple language (adjust for user's level)
-  - Mix explanations with practice questions
-  - Correct mistakes gently with examples
-  
-  2. Word Saving:
-  When explaining important vocabulary, include metadata in your response like:
-  {
-    "metadata": {
-      "saveWord": {
-        "word": "palabra",
-        "definition": "definition in the language",
-        "examples": ["example sentences"]
-      }
-    }
-  }
+  You are an adaptive language tutor. Your rules:
+  1. Use clear, simple language adjusted to the user's level.
+  2. Embed vocabulary metadata in JSON format for the system to extract automatically.
   \`;
 }`,
     images: ["/assets/images/main-page.png", "/assets/images/auth-page.png"]
-  },
-  {
-    title: "LinguaKWIC",
-    description: `LinguaKWIC is a versatile tool designed for searching and analyzing linguistic data efficiently. It supports both English and German languages, providing seamless integration with Wikipedia for enriched data retrieval and analysis.`,
-    features: [
-      "Browse Files: Easily browse and upload your files using the 'Browse File' button.",
-      "Wikipedia Integration: Paste a Wikipedia link or search for a specific topic using our advanced search button. We'll take care of the rest!",
-      "Advanced Search: Search for tokens, lemmas, posTags, or a combination of them. You can even perform case-sensitive searches!",
-      "Data Export: Save your search results and analyses as XML files for future reference.",
-      "Real-Time Updates: Experience seamless real-time data processing and display."
-    ],
-    technologies: ["Java", "Python", "JSoup", "Swing", "Maven", "XML"],
-    contributions: [
-      "Developed `WikipediaScraper.java` using JSoup to extract and parse data from Wikipedia pages.",
-      "Implemented `XMLWriter.java` to save scraped data as XML files, ensuring structured and accessible data storage.",
-      "Authored the `pom.xml` file to manage project dependencies and build processes with Maven.",
-      "Assisted in designing and developing the GUI using Java Swing, enhancing user experience with intuitive controls and real-time data display."
-    ],
-    codeSnippet: `/**
- * Wikipedia scraper implementation
- */
-public class WikipediaScraper {
-    private Document document;
-    
-    /**
-     * Connects to Wikipedia and scrapes content
-     */
-    public void connectToWikipedia(String url) throws IOException {
-        this.document = Jsoup.connect(url).get();
-        scrapeWikipedia();
-    }
-    
-    private void scrapeWikipedia() {
-        // Extract main content
-        Elements paragraphs = document.select("#mw-content-text p");
-        // Process content
-        processContent(paragraphs);
-    }
-}`,
-    imageUrl: "/assets/images/linguakwic.png",
-    githubUrl: "https://github.com/daniyalKhaibullin/Group-3KWIC_Project"
-  },
-  {
-    title: "Restalife Website",
-    description: `Developed and maintained the official website for 'Restalife' using WordPress, ensuring optimal performance and SEO. Managed database configurations with phpMyAdmin and collaborated with various plugins to enhance functionality.`,
-    features: [
-      "Custom Database Management: Created and managed databases using phpMyAdmin to support website functionalities.",
-      "Plugin Integration: Worked extensively with SEO Press, codeless editors, and other essential plugins to enhance website capabilities.",
-      "Performance Optimization: Improved website load times and responsiveness through front-end optimizations.",
-      "SEO Enhancements: Implemented SEO strategies to increase website visibility and search engine rankings.",
-      "Migration Management: Successfully migrated the website from one hosting platform to another with minimal downtime."
-    ],
-    technologies: ["WordPress", "PHP", "MySQL", "phpMyAdmin", "SEO Press", "Codeless Editors", "Plugins"],
-    contributions: [
-      "Configured and optimized MySQL databases using phpMyAdmin to ensure data integrity and performance.",
-      "Customized PHP files to tailor website functionalities, while maintaining WordPress standards.",
-      "Integrated and managed various plugins, including SEO Press and codeless editors, to enhance site features without extensive coding.",
-      "Optimized front-end elements to improve website performance and user experience.",
-      "Executed seamless migration of the website between hosting platforms, ensuring data consistency and uptime."
-    ],
-    codeSnippet: `<?php
-/**
- * Theme setup and customization
- */
-add_action('after_setup_theme', function() {
-    // Add theme support
-    add_theme_support('post-thumbnails');
-    add_theme_support('title-tag');
-    
-    // Register navigation menus
-    register_nav_menus([
-        'primary' => __('Primary Menu', 'restalife'),
-        'footer'  => __('Footer Menu', 'restalife')
-    ]);
-    
-    // Add custom image sizes
-    add_image_size('restalife-featured', 1200, 600, true);
-});`,
-    imageUrl: "/assets/images/restalife.png",
-    websiteUrl: "https://restalife.ru"
   }
 ];
 
@@ -180,7 +156,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects & Experience</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects & Architecture</h2>
           <div className="w-20 h-1 bg-primary-600 mx-auto"></div>
         </motion.div>
 
@@ -241,14 +217,12 @@ export default function SkillsSection() {
 
                 <CodeBlock 
                   code={project.codeSnippet} 
-                  language={project.title.includes("AI-Powered") ? "typescript" :
-                           project.title.includes("LinguaKWIC") ? "java" : 
-                           project.title.includes("Restalife") ? "php" : "javascript"}
+                  language={project.title.includes("Pipeline") ? "javascript" :
+                           project.title.includes("Max Planck") ? "yaml" : "typescript"}
                   onClick={() => setModalCode({ 
                     code: project.codeSnippet, 
-                    language: project.title.includes("AI-Powered") ? "typescript" :
-                             project.title.includes("LinguaKWIC") ? "java" : 
-                             project.title.includes("Restalife") ? "php" : "javascript",
+                    language: project.title.includes("Pipeline") ? "javascript" :
+                             project.title.includes("Max Planck") ? "yaml" : "typescript",
                     title: project.title 
                   })}
                 />
@@ -278,13 +252,13 @@ export default function SkillsSection() {
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
                       </svg>
-                      <span>Visit Website</span>
+                      <span>Visit Live Service</span>
                     </a>
                   )}
                 </div>
                 
                 {!project.githubUrl && !project.websiteUrl && (
-                  <p className="text-gray-500 italic mt-4">Private project - Code not publicly available</p>
+                  <p className="text-gray-500 italic mt-4">Internal infrastructure - Code not publicly available</p>
                 )}
               </div>
             </motion.div>
@@ -311,7 +285,7 @@ export default function SkillsSection() {
       <Modal 
         isOpen={modalCode !== null} 
         onClose={() => setModalCode(null)}
-        title={`${modalCode?.title} - Code`}
+        title={`${modalCode?.title} - Architecture`}
       >
         {modalCode && (
           <div className="bg-[#1e1e1e] rounded-lg p-6 overflow-x-auto">
